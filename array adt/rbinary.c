@@ -11,17 +11,19 @@ int rbinsearch(int arr[], int l, int h, int key)
     int mid ;
     // int i = 0;
     mid = (l + h) / 2;
+    // printf("%d",h);
+    // printf("\n%d",l);
     if (l <= h)
     {
-        if (mid == key)
+        if (arr[mid] == key)
         {
-            return mid;
+            return mid ;
         }
-        else if (mid < key)
+        else if (arr[mid] < key)
         {
             rbinsearch(arr, mid + 1, h, key);
         }
-        else if (mid > key)
+        else if (arr[mid] > key)
         {
             rbinsearch(arr, l, mid - 1, key);
         }
@@ -37,7 +39,7 @@ int main()
     display(a, len);
     int ind = 0;
 
-    ind = rbinsearch(a, 0, 14, 1);
+    ind = rbinsearch(a, 0, 14, 15);
     printf("\n%d", ind);
 
     return 0;
