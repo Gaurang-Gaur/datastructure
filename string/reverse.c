@@ -12,6 +12,8 @@ i=i-1;// we are doing this because for loop is giving us length of string but to
 
 // printf("%d",i);
 int k;
+
+
 k=i;
 char y[20];
 for(j=0,k=i;k>=0;k--,j++){
