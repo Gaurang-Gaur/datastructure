@@ -11,7 +11,7 @@ int size;
 };
 
 
-// here we directly wanted to create the stack here,
+// here we direct ly wanted to create the stack here,
 
 void create(struct stack *st){
 
