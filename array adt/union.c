@@ -14,9 +14,14 @@ void uni(int *a, int *b)
     {
         c[k++] = a[i];
     }
+    int count=0;
     for(int j=0;j<5;j++){
-       for(;k<5;k++){
+       for(int k=0;k<5;k++)
+       {
+        
             if(c[j]!=b[k]){
+                // count++;
+                // printf("%d",count);
                 c[i++]=b[k];
             }
        }

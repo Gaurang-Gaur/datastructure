@@ -1,37 +1,42 @@
-#include<iostream>
-#include<stdlib.h>
-#include<stdio.h>
-
+#include <iostream>
 using namespace std;
 
-int main()
-{
-    int a[3][4]={{1,2,3,4},{2,3,4,4},{1,3,5,7}};
-    // three rows and four columns;
-    int *b[3];
-    int **c;// just a double pointer;
-    int i,j;
-    for ( i = 0; i < 3; i++)
-    {
-          for ( j = 0; j<4; i++)
-          
-                 printf("%d ",a[i][j]);
-                 
-          
-          printf("\n");
+int main() {
+    int n;
+    cout<<"enter the value of n:"<<endl;
+    cin >> n;
+    int a[1000005];
+    cout<<"enter the array"
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    
+    // till here we have taken the input here
+    int left[1000005], right[1000005];
+    // here we have create two array left and right//
+    cout<<"run"<<endl;
+    int max_left = 0, max_right = 0;
+    // finding the max of left and right array here
 
-
-    b[0]=(int *)malloc(4*sizeof(int));
-     b[1]=(int *)malloc(4*sizeof(int));
-      b[2]=(int *)malloc(4*sizeof(int));
-      c=(int **)malloc(3*sizeof(int *));//it's in heap//
-      c[0]=(int *)malloc(4*sizeof(int ));// it will created in heap as whole 2d array in heap//
-
-      c[1]=(int *)malloc(4*sizeof(int ));
-     c[2]=(int *)malloc(4*sizeof(int ));
-
-     
-     return 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] > max_left) {
+            max_left = a[i];
+        }
+        left[i] = max_left;
+    }
+    for (int i = 0; i < n; i++) {
+       cout<<left[i]<<endl;
+    }
+    // for (int i = n - 1; i >= 0; i--) {
+    //     if (a[i] > max_right) {
+    //         max_right = a[i];
+    //     }
+    //     right[i] = max_right;
+    // }
+    // int ans = 0;
+    // for (int i = 0; i < n; i++) {
+    //     int h = min(left[i], right[i]);
+    //     ans += max(h - a[i], 0);
+    // }
+    // cout << ans << endl;
+    return 0;
 }
