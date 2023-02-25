@@ -56,7 +56,7 @@ void display(struct node *p)
 
 int main()
 {
-    top;
+    top = NULL;
     // struct node *top;
     push(45);
     push(41);
