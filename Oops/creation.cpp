@@ -8,8 +8,12 @@ public:
      char ch;
      Hero()
      {
-          cout << "this constructor" << endl;
-     };
+          cout << "this default consturctor:" << endl;
+     }
+
+   void sethealth(int h){
+     health=h;
+   }
 };
 
 struct ne
@@ -28,15 +32,15 @@ int main()
      Hero h1;
 
      // Dynamic alloaction of OBJECt here.
-     
-     Hero *b=new Hero;
-     
-     (*b).ch='B';
-        
-        cout<<(*b).ch<<endl;
-        
 
+     h1.sethealth(45);
+cout<<h1.health<<endl;
 
+     Hero *b = new Hero;
+
+     (*b).ch = 'B';
+
+     cout << (*b).ch << endl;
 
      cout << sizeof(h1) << endl;
 
@@ -45,6 +49,8 @@ int main()
      // save time of processor...
 
      cout << sizeof(s) << endl; // same go for the struct also ,
+
+     // using the this keyword in oops
 
      return 0;
 }
