@@ -27,6 +27,11 @@ class Hero{
 
           
      }
+
+     ~Hero(){
+          cout<<"calling the destructor"<<endl;
+          
+     }
 };
 int main()
 {
