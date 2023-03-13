@@ -27,7 +27,7 @@ void bubble(int *a, int n)
 
     for (int i = 0; i < n; i++)
     {
-
+         int flag=0;
         for (int j = 0; j < n - 1-i; j++)
 
         {
@@ -45,9 +45,39 @@ void bubble(int *a, int n)
                 temp = a[j];
                 a[j] = a[j+1];// I can't use j++ because it have same value as the j in case of array...
                 a[j+1] = temp;
+                flag=1;// reducing the no. of passing 
+            }
+            if(flag==0){
+                break;
             }
         }
     }
+}
+
+void insert(int *a, int n){
+
+    // here in insertion sort we require two loops one for the unsorted list side (RHS) and sorted list side
+    // we know the length of unsorted listed side as it start from index 1 and end at index n-1 => we use the for loop
+    // but in sorted list we don't know the no. but we know the condition => we use the while loop
+
+    for(int i=1;i<n;i++)
+{
+    int temp=0;// created to compare it with sorted list side elements
+    temp=a[i];
+    int j=0;
+       j=i-1;
+    while(j>=0&& a[j]>temp)//if this condition is true then we perform the swifting...
+
+    {
+        a[j+1]=a[j];
+       
+       j--;
+
+    }
+    a[j+1]=temp; // then we change the temp variable the continus checking in sorted list.
+
+
+}
 }
 
 int main()
@@ -59,7 +89,9 @@ int main()
 
     input(a, n);
     display(a, n);
-    bubble(a, n);
+    // bubble(a, n);
+    insert(a,n);
+    insert(a,n);
     printf("\n");
     display(a, n);
 
