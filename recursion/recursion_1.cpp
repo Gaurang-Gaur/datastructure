@@ -22,7 +22,8 @@ int main()
     int n=0;
     cout << "enter the value of n:" << endl;
 
-    cin >> n;
+    n=5;
+    cout<<"working out"<<endl;
 
     int ans=0;
     ans = fact(n);

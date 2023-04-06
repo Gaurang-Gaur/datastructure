@@ -21,6 +21,7 @@ void display(int *a, int n)
     }
 }
 
+
 void bubble(int *a, int n)
 {
     // here we have to loop one for passing and one for comparsion
@@ -77,11 +78,12 @@ void insert(int *a, int n)
         a[j + 1] = temp; // then we change the temp variable the continus checking in sorted list.
     }
 }
-void swap(int a, int b){
-    int temp=0;
-    temp=a;
-    a=b;
-    b=temp;
+void swap(int a, int b)
+{
+    int temp = 0;
+    temp = a;
+    a = b;
+    b = temp;
 }
 void selection(int *a, int n)
 {
@@ -101,11 +103,54 @@ void selection(int *a, int n)
             }
         }
         // after completion of this loop min have the min element index for unsorted subarray...
-        
+
         if (i != min)
         {
-            swap(a[i],a[min]);
+            swap(a[i], a[min]);
         }
+    }
+}
+int partition(int *a, int lb, int ub)
+{
+
+    // here first we let a pivot element as lb or ub;
+    int pivot = a[0];
+
+    // now, we consider to pointer in this array start as lb and ub and as end
+    int start, end;
+
+    start = lb;
+    end = ub;
+
+    while (start < end)
+        {
+            while (a[start] <= pivot)
+            {
+                start++;
+            }
+            while (a[start] > pivot)
+            {
+                end--;
+            }
+            if (start < end)
+            {
+                swap(a[start],a[end]);
+            }
+            swap(a[lb],a[end]);// this will take the pivot ...
+            return end;
+        }
+}
+void quick(int *a, int lb,int ub)
+{
+    
+
+    if (lb < ub)
+    {
+        int loc;
+        loc = partition(a, lb, ub); // this will return the position of pivot so, we can recursely call that in subarray in LHs and RHs
+
+        quick(a, lb, loc - 1);
+        quick(a, loc + 1, ub);
     }
 }
 
@@ -120,10 +165,11 @@ int main()
     display(a, n);
     // bubble(a, n);
     // insert(a,n);
-    selection(a, n);
-    insert(a, n);
+    // selection(a, n);
+    quick(a, 0,5);// for array of n=6;
     printf("\n");
     display(a, n);
+    cout<<"running"<<endl;
 
     return 0;
 }
