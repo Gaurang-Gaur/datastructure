@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#define pb push_back
+#define rep(i,a,b) for(int i=a;i<b;i++)
+
 
 using namespace std;
 
@@ -21,9 +24,19 @@ void iterators(vector<int> g)
 
         cout << *i << endl;
     }
-    
-}
 
+}
+void macro(vector<int > m){
+    m.resize(15);
+    cout<<"Using the macros in code"<<endl;
+    
+    rep(i,11,15){
+          m.pb(i);
+    }
+    rep(i,0,14){
+        cout<<m[i]<<endl;
+    }
+}
 int main()
 {
     vector<int> v;
@@ -38,10 +51,13 @@ int main()
     {
         cout << v[i] << endl;
     }
-    v.resize(4);
+    v.pb(3645);
+    v.resize(8);
     cout << "size of vector:" << v.size() << endl;
     cout << "At given position in vector:" << v.at(0) << endl;
     iterators(v);
+    macro(v);
+
     // cout<<v.begin()<<endl;
 
     return 0;
