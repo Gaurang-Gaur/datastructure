@@ -62,6 +62,6 @@ int main() {
 
     }
 
-    cout<<" Answer is " << ans+1 << endl;
+    cout<<" Answer is " << ans << endl;
     return 0;
 }
