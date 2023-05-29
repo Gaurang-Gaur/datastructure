@@ -5,21 +5,25 @@ using namespace std;
 int main()
 {
 
-    map<string, int> map1;
+    map<int, int> map1;
 
     
 
-    map<string, int>::iterator it = map1.begin();
+    map<int, int>::iterator it = map1.begin();
     int n;
     // cout<<n<<endl;
     cout<<"enter the value of n:"<<endl;
     cin>>n;
-    string key;
+    pair<map<int,int>::iterator ,bool>r;
+    r.second=false;
+    
+    int key;
     int value;
     for(int i=0;i<n;i++){
         cin>>key>>value;
-        map1.insert({key,value});
+        r=(map1.insert({key,value}));
     }
+    
 
     for (it = map1.begin(); it != map1.end(); it++)
     {

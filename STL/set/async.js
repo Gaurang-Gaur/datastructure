@@ -19,6 +19,7 @@ async function gaurang(){
     let a = await p1;
     let b= await p2;
     // p2.catch(e=>{console.log(e)});
+    
 
 console.log(a);
 console.log(b);
